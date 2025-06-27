@@ -1,6 +1,10 @@
-nome: digaOla
-description: "Ação para printar ola no console"
+# .github/actions/diga-ola-action/action.yml
+name: "Say Hello Action"
+description: "An action that simply says hello."
 
 runs:
-  -name: Diga Ola
-  run: echo "Ola"
+  using: "composite" # Usa "composite" para acciones que ejecutan múltiples pasos
+  steps:
+    - name: Print hello message
+      run: echo "Hello from Diga Ola Action!"
+      shell: bash
